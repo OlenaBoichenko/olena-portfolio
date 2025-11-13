@@ -8,12 +8,12 @@ import { SiGithub } from 'react-icons/si'
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
+    title: 'Demo E-Commerce Platform',
     description: 'A full-stack e-commerce solution built with Next.js, featuring real-time inventory management, secure payment processing with Stripe, and an intuitive admin dashboard. Includes advanced filtering, wishlist functionality, and order tracking.',
     image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop',
     tags: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
-    liveUrl: 'https://example-ecommerce.com',
-    githubUrl: 'https://github.com/example/ecommerce',
+    liveUrl: 'https://ecommerce-shop-demo.netlify.app/',
+    githubUrl: 'https://github.com/OlenaBoichenko/ecommerce-demo',
   },
   {
     id: 2,
