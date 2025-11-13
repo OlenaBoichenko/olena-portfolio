@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A modern, high-tech portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. 
+A modern, high-tech portfolio website built with Next.js, TypeScript, and Tailwind CSS. 
 
 ## 🚀 Features
 
