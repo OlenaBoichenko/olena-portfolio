@@ -36,7 +36,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Olena Boichenko**
 - Location: Victoria, BC, Canada
 - GitHub: [@olenaboichenko](https://github.com/olenaboichenko)
-- LinkedIn: [Olena Boichenko](https://www.linkedin.com/in/olenaboichenko)
+- LinkedIn: [Olena Boichenko](https://www.linkedin.com/in/olena-boichenko-dev)
 
 ---
 
