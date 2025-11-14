@@ -35,12 +35,12 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Real Estate Marketplace',
-    description: 'Property listing platform with advanced search filters, interactive maps using Mapbox, virtual tours, and agent profiles. Features include saved searches, price alerts, and mortgage calculator.',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
-    tags: ['React', 'Redux', 'Mapbox', 'Python'],
-    liveUrl: 'https://example-realestate.com',
-    githubUrl: 'https://github.com/example/realestate',
+    title: 'Sidney Bakery',
+    description: 'Website for a home bakery featuring a product catalog, online ordering system, and responsive design. Includes a product gallery, order form, delivery information, and contact details.',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&h=600&fit=crop',
+    tags: ['Next.js', 'Tailwind', 'TypeScript'],
+    liveUrl: 'https://sidney-bakery.netlify.app/',
+    githubUrl: 'https://github.com/OlenaBoichenko/sidney-bakery',
   },
   {
     id: 5,
