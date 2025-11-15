@@ -32,8 +32,8 @@ const projects = [
     description: 'SaaS platform leveraging OpenAI API to generate marketing content, blog posts, and social media captions. Includes template library, content history, and export functionality. Built with modern web technologies.',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
     tags: ['Next.js', 'OpenAI', 'Tailwind', 'Prisma'],
-    liveUrl: 'https://example-aicontent.com',
-    githubUrl: 'https://github.com/example/aicontent',
+    liveUrl: 'https://generatorcontent.netlify.app/',
+    githubUrl: 'https://github.com/OlenaBoichenko/ai-content-generator',
     inDevelopment: false,
   },
   {
