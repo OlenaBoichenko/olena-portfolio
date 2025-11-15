@@ -14,6 +14,7 @@ const projects = [
     tags: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
     liveUrl: 'https://ecommerce-shop-demo.netlify.app',
     githubUrl: 'https://github.com/OlenaBoichenko/ecommerce-demo',
+    inDevelopment: false,
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const projects = [
     tags: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
     liveUrl: 'https://example-taskmanager.com',
     githubUrl: 'https://github.com/example/taskmanager',
+    inDevelopment: true,
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const projects = [
     tags: ['Next.js', 'OpenAI', 'Tailwind', 'Prisma'],
     liveUrl: 'https://example-aicontent.com',
     githubUrl: 'https://github.com/example/aicontent',
+    inDevelopment: false,
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ const projects = [
     tags: ['Next.js', 'Tailwind', 'TypeScript'],
     liveUrl: 'https://sidney-bakery.netlify.app/',
     githubUrl: 'https://github.com/OlenaBoichenko/sidney-bakery',
+    inDevelopment: false,
   },
   {
     id: 5,
@@ -50,6 +54,7 @@ const projects = [
     tags: ['React', 'TypeScript', 'Chart.js', 'Firebase'],
     liveUrl: 'https://example-fitness.com',
     githubUrl: 'https://github.com/example/fitness',
+    inDevelopment: true,
   },
   {
     id: 6,
@@ -59,6 +64,7 @@ const projects = [
     tags: ['WordPress', 'PHP', 'JavaScript', 'MySQL'],
     liveUrl: 'https://example-corporate.com',
     githubUrl: 'https://github.com/example/corporate',
+    inDevelopment: true,
   },
 ]
 
@@ -113,10 +119,12 @@ export default function Projects() {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: project.inDevelopment ? 0 : -10 }}
               className="group"
             >
-              <div className="card-glow bg-dark-light/50 backdrop-blur-sm rounded-xl overflow-hidden border border-primary/20 transition-all duration-300 hover:border-primary/40 h-full flex flex-col">
+              <div className={`card-glow bg-dark-light/50 backdrop-blur-sm rounded-xl overflow-hidden border border-primary/20 transition-all duration-300 hover:border-primary/40 h-full flex flex-col relative ${
+                project.inDevelopment ? 'opacity-60' : ''
+              }`}>
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-light to-transparent z-10" />
@@ -125,13 +133,26 @@ export default function Projects() {
                     alt={project.title}
                     width={800}
                     height={600}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className={`w-full h-full object-cover transition-transform duration-500 ${
+                      project.inDevelopment ? '' : 'group-hover:scale-110'
+                    }`}
                   />
+
+                  {/* In Development Badge */}
+                  {project.inDevelopment && (
+                    <div className="absolute inset-0 z-20 flex items-center justify-center">
+                      <div className="bg-dark/90 backdrop-blur-sm border-2 border-accent px-6 py-3 rounded-lg">
+                        <p className="text-accent font-bold text-lg">In Development</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Project Info */}
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold text-gray-200 mb-3 group-hover:text-primary transition-colors">
+                  <h3 className={`text-xl font-bold text-gray-200 mb-3 transition-colors ${
+                    project.inDevelopment ? '' : 'group-hover:text-primary'
+                  }`}>
                     {project.title}
                   </h3>
                   <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
@@ -151,37 +172,39 @@ export default function Projects() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex gap-4">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
-                    >
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-full px-4 py-2 bg-gradient-to-r from-primary to-accent rounded-lg font-semibold text-dark flex items-center justify-center gap-2 text-sm"
+                  {!project.inDevelopment && (
+                    <div className="flex gap-4">
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1"
                       >
-                        <HiExternalLink />
-                        Live Demo
-                      </motion.button>
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-4 py-2 border-2 border-primary rounded-lg font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-2 text-sm"
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="w-full px-4 py-2 bg-gradient-to-r from-primary to-accent rounded-lg font-semibold text-dark flex items-center justify-center gap-2 text-sm"
+                        >
+                          <HiExternalLink />
+                          Live Demo
+                        </motion.button>
+                      </a>
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <SiGithub />
-                        Code
-                      </motion.button>
-                    </a>
-                  </div>
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="px-4 py-2 border-2 border-primary rounded-lg font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-2 text-sm"
+                        >
+                          <SiGithub />
+                          Code
+                        </motion.button>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>

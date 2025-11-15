@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: 'Olena Boichenko | Full Stack Developer',
   description: 'Portfolio of Olena Boichenko - Full Stack Developer based in Victoria, BC, Canada',
   keywords: ['developer', 'full stack', 'React', 'Next.js', 'TypeScript', 'Node.js'],
+  authors: [{ name: 'Olena Boichenko' }],
+  creator: 'Olena Boichenko',
+  icons: {
+    icon: '/icon.svg',
+  },
 }
 
 export default function RootLayout({
